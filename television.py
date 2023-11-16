@@ -31,10 +31,11 @@ class Television:
         tv is on. If the tv is at max channel it will go to
         the minimum channel.
         '''
-        if self.__channel < Television.MAX_CHANNEL:
-            self.__channel += 1
-        else:
-            self.__channel = Television.MIN_CHANNEL
+        if self.__status:
+            if self.__channel < Television.MAX_CHANNEL:
+                self.__channel += 1
+            else:
+                self.__channel = Television.MIN_CHANNEL
     def channel_down(self):
         '''
         This function decreases the tv channel value when the
